@@ -1,0 +1,61 @@
+.header-container {
+  background-color: #fff;
+}
+/*4.1 welcome info */
+
+/* header top */
+.header-top {
+  background: #242424;
+  border-bottom: 1px solid #000;
+  line-height: 32px;
+  width: 100%;
+  color: #ccc;
+}
+.header-top a {
+  color: #ccc;
+}
+.header-top a:hover {
+  color: #4caf50;
+}
+.welcome-msg {
+  text-align: left;
+  display: inline-block;
+  padding: 2px 15px 2px 0;
+
+  font-size: 16px;
+  border-right: 1px solid #000;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .welcome-msg {
+    float: left;
+  }
+}
+
+/* Logo */
+.logo {
+  vertical-align: middle;
+  margin-top: 32px;
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 32px;
+}
+@media (max-width: 640px) {
+  .logo {
+    margin-top: 15px;
+    text-align: center;
+    padding-bottom: 12px;
+    margin-bottom: 0px;
+    width: 100%;
+  }
+}
+@media (max-width: 479px) {
+  header .logo a img {
+    width: 45%;
+  }
+}
+@media (max-width: 768px) {
+  header .logo a img {
+    width: auto;
+  }
+}

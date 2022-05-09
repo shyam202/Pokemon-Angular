@@ -1,0 +1,52 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="hidden-xs col-sm-3 col-md-6">
+      <!-- Search -->
+      <div class="top-search">
+        <div id="search">
+          <form>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search"
+                [(ngModel)]="searchTerm"
+                (keyup)="search($event)"
+              />
+              <button class="btn-search" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- End Search -->
+    </div>
+  </div>
+</div>
+<div class="container-pokemon">
+  <div
+    class="grid-box"
+    *ngFor="
+      let data of dataList
+        | paginate
+          : { itemsPerPage: 12, currentPage: page, totalItems: totalData }
+        | filter: searchKey:'name'
+    "
+  >
+    <img [src]="data.sprites.front_default" alt="Pokemon" />
+    <h5>{{ data.name }}</h5>
+    <p><b>Type:</b> {{ data.types[0].type.name }}</p>
+    <p><b>Height:</b> {{ data.height }}</p>
+    <p><b>Health:</b> {{ data.stats[0].base_stat }}</p>
+    <p><b>Power:</b> {{ data.stats[1].base_stat }}</p>
+    <p><b>Weight:</b> {{ data.weight }}</p>
+    <button (click)="openDetails(data.id)">More Details About Game</button>
+  </div>
+</div>
+
+<br />
+<pagination-controls
+  (pageChange)="page = $event; dataList = []; getPokemonData()"
+></pagination-controls>

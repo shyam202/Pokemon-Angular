@@ -1,0 +1,27 @@
+<app-header></app-header>
+<ng-container>
+  <div class="container">
+    <ng-container>
+      <div class="list-container">
+        <h1>Played Games</h1>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Game Index</th>
+              <th scope="col">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list.game_indices">
+              <th scope="row">{{ item.game_index }}</th>
+              <td>{{ item.version.name }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="below-container">
+          <p style="font-size: 1rem"></p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>

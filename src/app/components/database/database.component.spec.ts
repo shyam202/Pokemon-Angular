@@ -1,0 +1,26 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DatabaseComponent } from './database.component';
+
+describe('DatabaseComponent', () => {
+  let component: DatabaseComponent;
+  let fixture: ComponentFixture<DatabaseComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ DatabaseComponent, NgxPaginationModule ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(DatabaseComponent);
+    component = fixture.componentInstance;
+    fixture.autoDetectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+});
